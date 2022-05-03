@@ -9,10 +9,6 @@ def gameStart():
     time.sleep(1)
     print(1)
     time.sleep(1)
-def wpm(characters):
-    characters = len(word)
-    characters /= 5
-    wpms = characters/time
 
 file = open(r'C:\Users\ethan\OneDrive\Documents\Python\english.txt')#If you want the word list, head over to https://ghostbin.com/mdhuL
 data = file.read()                                                  #Just put it in your file and put the file path inplace of this.
