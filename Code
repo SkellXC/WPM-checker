@@ -1,0 +1,60 @@
+import time
+import random
+import math
+
+def gameStart():
+    print(3)
+    time.sleep(1)
+    print(2)
+    time.sleep(1)
+    print(1)
+    time.sleep(1)
+def wpm(characters):
+    characters = len(word)
+    characters /= 5
+    wpms = characters/time
+
+file = open(r'C:\Users\ethan\OneDrive\Documents\Python\english.txt')#If you want the word list, head over to https://ghostbin.com/mdhuL
+data = file.read()                                                  #Just put it in your file and put the file path inplace of this.
+info = data.split()#file stuff
+
+word = ""
+
+length = int(input("How many words do you want to type? This doesn't affect the score."))
+if length < 8:
+    length = int(input("Please enter 10 or higher."))
+
+
+
+for x in range(length):
+    ran = random.randint(0 ,300)
+    word_pos = random.randint(0, len(info)-1)
+    testList = word_pos
+    current_word = info[ran]
+    word = word + current_word + " "
+
+word = str(word)
+
+input("Press enter to start! \n Once the game starts, type out the words as fast as you can. \n Press ENTER once you've finished.")
+gameStart()
+print("GO! \n",word)
+start = time.time()
+result = input("")
+end = time.time()
+a = len(word)
+result = result + " "
+print(result)
+if result == word:
+    print("Calculating your score now!")
+    time.sleep(5)
+elif result != word:
+    print("Uh oh! You've made some mistakes! Your score will be slightly inaccurate.")
+
+time = end-start
+time = round(time)
+time/= 60
+characters = len(word)
+characters /= 5
+
+wpms = characters/time
+print("Wow! You just typed", wpms, "words per minute!")
